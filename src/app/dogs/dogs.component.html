@@ -1,36 +1,34 @@
-<body ng-init="loadData()">
-    <div id="app">
+<div class="clr-row"  >
+    <!-- ng-init="loadData()" -->
     <div *ngFor="let dog of dogs">
-        <h2>{{dog.name | uppercase}}</h2>
- 
-        <!-- <section data-ng-controller="myCtrl">
-            <img ng-src="{{dog.picture}}" width="200px" height="200px" ng-repeat="image in allImageData">
-        </section> -->
+            <div class="clr-col-4 clr-align-items-center">
+                <div class="card">
+                    <div class="card-header">
+                        {{dog.name | uppercase}}
+                    </div>
+                    <div class="card-text">
+                        <div class="card-img">
+                            <img [src]="dog.picture" />
+                        </div>
+                    <div class="card-block">
+                        <!-- <div class="card-title">
+                        Block
+                    </div> -->
 
- 
-        <img [src]="dog.picture" width="200px" height="200px"/>
-        
-    
-        <div><span>Comments: </span> 
-            <div *ngFor="let comment of dog.comments">
-                <p>{{comment}} </p>
+                            <ul class="list-group">
+                                <div *ngFor="let comment of dog.comments">
+                                    <li class="list-group-item" >{{comment}} </li>
+                              
+                            </div>
+                        </ul>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-sm btn-link">Footer Action 1</button>
+                        <button class="btn btn-sm btn-link">Footer Action 2</button>
+                    </div>
+                </div>
             </div>
-        </div> 
-
-
-    </div>
-
+        </div>
+   
 </div>
-
-    <!-- <button (click) = "loadData()">getDogs</button> -->
-<!-- <p>dogs works!</p>
-
-<h2>{{dog.name | uppercase}}</h2>
- 
-<div><span>Comments: </span> <p>{{dog.comments}} </p></div> -->
-<!-- <div>
-    <label>comments:
-      <input [(ngModel)]="dog.comments" placeholder="comments"/>
-    </label>
-  </div> -->
-</body> 
