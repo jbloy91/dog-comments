@@ -1,0 +1,25 @@
+<body ng-init="loadData()">
+    <div *ngFor="let dog of dogs">
+        <h2>{{dog.name | uppercase}}</h2>
+ 
+        <div><span>Comments: </span> 
+            <div *ngFor="let comment of dog.comments">
+                <p>{{comment}} </p>
+            </div>
+        </div> 
+
+
+    </div>
+
+    <!-- <button (click) = "loadData()">getDogs</button> -->
+<!-- <p>dogs works!</p>
+
+<h2>{{dog.name | uppercase}}</h2>
+ 
+<div><span>Comments: </span> <p>{{dog.comments}} </p></div> -->
+<!-- <div>
+    <label>comments:
+      <input [(ngModel)]="dog.comments" placeholder="comments"/>
+    </label>
+  </div> -->
+</body> 
