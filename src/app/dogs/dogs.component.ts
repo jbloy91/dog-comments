@@ -17,14 +17,8 @@ export class DogsComponent implements OnInit {
            constructor(private http:HttpClient) {
            }
   dogs: Dog[] = [];
-  // dog: Dog = {
-  //   id: 1,
-  //   name: 'Lucy',
-  //   comments: ['This is an excellent one','Truly Superb'],
-  //   status: "A",
-  //   picture: ''
-  // };
-
+ 
+  newComment: string;
   // https://8q1ve786o5.execute-api.us-east-2.amazonaws.com/test
 
 
@@ -32,11 +26,22 @@ export class DogsComponent implements OnInit {
     this.loadData(); 
   }
 
+
+  saveComment(dog:Dog){
+      console.log(dog);
+      dog.comments.push(this.newComment);
+      this.newComment="";
+      //this.dogs.//comments.push(newComment);
+  }
+
+
   loadData(){
     this.http.get<ServiceDogModel>('https://8q1ve786o5.execute-api.us-east-2.amazonaws.com/test/pics').subscribe((response) => {
       console.log(response);
       this.dogs = response.dogs;
     });
+
+   
 
 
 

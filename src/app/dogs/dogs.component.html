@@ -1,7 +1,7 @@
-<div class="clr-row"  >
+<div class="card-columns"  >
     <!-- ng-init="loadData()" -->
-    <div *ngFor="let dog of dogs">
-            <div class="clr-col-4 clr-align-items-center">
+    <div  *ngFor="let dog of dogs">
+        <!-- class="clr-col-4 clr-align-items-center"   -->
                 <div class="card">
                     <div class="card-header">
                         {{dog.name | uppercase}}
@@ -10,17 +10,23 @@
                         <div class="card-img">
                             <img [src]="dog.picture" />
                         </div>
-                    <div class="card-block">
-                        <!-- <div class="card-title">
-                        Block
-                    </div> -->
+                        <div class="card-block">
+                            <!-- <div class="card-title">
+                            Block
+                            </div> -->
 
                             <ul class="list-group">
-                                <div *ngFor="let comment of dog.comments">
-                                    <li class="list-group-item" >{{comment}} </li>
-                              
-                            </div>
-                        </ul>
+                                    <div *ngFor="let comment of dog.comments">
+                                        <li class="list-group-item" >{{comment}} </li>
+                                
+                                </div>
+                            </ul>
+                            <!-- <form clrForm clrLayout="horizontal">
+                                <clr-input-container>
+                                <input clrInput placeholder="Add a comment" name="newComment"  ng-model="newComment" />
+                            </clr-input-container> 
+                            <button class="btn btn-primary" ng-click="saveComment(dog)">Save</button>
+                            </form> -->
                         </div>
                     </div>
                     <div class="card-footer">
@@ -29,6 +35,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        
    
 </div>
+
