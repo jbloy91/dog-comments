@@ -9,14 +9,18 @@ import { ClarityModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
-import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { AddDogComponent } from './add-dog/add-dog.component';
+import { DashboardComponent } from './dashboard/dashboard.component'; // <-- NgModel lives here
 
 @NgModule({
   declarations: [
     AppComponent,
     DogsComponent,
     HeaderComponent,
-    SidenavComponent
+    SidenavComponent,
+    AddDogComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +28,8 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
     HttpClientModule,
     ClarityModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

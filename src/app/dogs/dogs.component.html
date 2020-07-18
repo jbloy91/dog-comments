@@ -1,14 +1,14 @@
-<div class="card-columns"  >
+
     <!-- ng-init="loadData()" -->
-    <div  *ngFor="let dog of dogs">
-        <!-- class="clr-col-4 clr-align-items-center"   -->
+    <div  >
+        <!--*ngFor="let dog of dogs" class="clr-col-4 clr-align-items-center"   -->
                 <div class="card">
                     <div class="card-header">
-                        {{dog.name | uppercase}}
+                        {{selectedDog.name | uppercase}}
                     </div>
                     <div class="card-text">
                         <div class="card-img">
-                            <img [src]="dog.picture" />
+                            <img [src]="selectedDog.picture" />
                         </div>
                         <div class="card-block">
                             <!-- <div class="card-title">
@@ -16,26 +16,35 @@
                             </div> -->
 
                             <ul class="list-group">
-                                    <div *ngFor="let comment of dog.comments">
+                                    <div *ngFor="let comment of selectedDog.comments">
                                         <li class="list-group-item" >{{comment}} </li>
                                 
                                 </div>
                             </ul>
-                            <!-- <form clrForm clrLayout="horizontal">
+                            <div class="clr-row">
+                            <form clrForm [formGroup]="exampleForm">
+                                <!-- <clr-input-container>
+                                <input clrInput placeholder="Add a comment"   ng-model="newComment" />
+                                </clr-input-container> 
+                                <button class="btn btn-primary" type="submit" (click)="saveComment()">Save</button> -->
+
                                 <clr-input-container>
-                                <input clrInput placeholder="Add a comment" name="newComment"  ng-model="newComment" />
-                            </clr-input-container> 
-                            <button class="btn btn-primary" ng-click="saveComment(dog)">Save</button>
-                            </form> -->
+                                    <input clrInput placeholder="Add a comment"  formControlName="sample" />
+                                </clr-input-container>
+                                <br/>
+                                <button class="btn btn-primary" type="submit" (click)="saveComment()">Save</button>
+                                <button class="btn" type="button" (click)="reset()">Reset</button>
+                            </form>
+                        </div>
+                         
+                            
                         </div>
                     </div>
-                    <div class="card-footer">
+                    <!-- <div class="card-footer">
                         <button class="btn btn-sm btn-link">Footer Action 1</button>
                         <button class="btn btn-sm btn-link">Footer Action 2</button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         
    
-</div>
-
